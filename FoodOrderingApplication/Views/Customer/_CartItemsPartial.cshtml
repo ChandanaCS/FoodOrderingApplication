@@ -1,0 +1,15 @@
+﻿@model Dictionary<int, int>
+
+
+<h2>Items in Cart</h2>
+@foreach (var productId in Model.Keys)
+{
+
+    <div>
+        <span>Product ID: @productId</span>
+        <span>Quantity: @Model[productId]</span>
+    </div>
+
+}
+@Html.ActionLink("Place Order", "PlaceOrder")
+

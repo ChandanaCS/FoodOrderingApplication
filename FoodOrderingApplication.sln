@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34407.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodOrderingApplication", "FoodOrderingApplication\FoodOrderingApplication.csproj", "{4742927B-9A8D-49EF-944A-71572929D8E4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1751BD91-4517-4229-9DC0-67EFFA0D7EC3} = {1751BD91-4517-4229-9DC0-67EFFA0D7EC3}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodOrdering_DataAccessLayer_Library", "FoodOrdering_DataAccessLayer_Library\FoodOrdering_DataAccessLayer_Library.csproj", "{1751BD91-4517-4229-9DC0-67EFFA0D7EC3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4742927B-9A8D-49EF-944A-71572929D8E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4742927B-9A8D-49EF-944A-71572929D8E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4742927B-9A8D-49EF-944A-71572929D8E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4742927B-9A8D-49EF-944A-71572929D8E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1751BD91-4517-4229-9DC0-67EFFA0D7EC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1751BD91-4517-4229-9DC0-67EFFA0D7EC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1751BD91-4517-4229-9DC0-67EFFA0D7EC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1751BD91-4517-4229-9DC0-67EFFA0D7EC3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6945602E-D2CE-4661-834E-6CF0818BEDFD}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,76 @@
+﻿@using FoodOrderingApplication.Models
+@model IEnumerable<FoodOrderingApplication.Models.ProductModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Menu</h2>
+<p>
+    @Html.ActionLink("Logout", "Login", "Account")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>Quantity</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                <div class="input-group">
+                    <input type="number" id="quantity_@item.ProductID" value="1" min="1" class="form-control" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn" onclick="addToCart(@item.ProductID,@item.Price)">Add to Cart</button>
+                    </span>
+                </div>
+            </td>
+        </tr>
+    }
+
+</table>
+<div id="cartItemsContainer">
+    <!-- Cart items will be displayed here -->
+    @Html.Partial("_CartItemsPartial", new Dictionary<int, int>())
+</div>
+<script>
+    function addToCart(productId,price) {
+        var quantity = $("#quantity_" + productId).val();
+        var total = quantity * price;
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("AddToCart", "Customer")",
+            data: { productId: productId, quantity: quantity, total: total },
+            success: function (data) {
+                // Optionally, update the UI to reflect the addition of the item to the cart
+                alert("Item added to cart!");
+
+                // Update the cart items dynamically
+                $("#cartItemsContainer").html(data);
+            },
+            error: function (error) {
+                console.error("Error adding item to cart:", error);
+            }
+        });
+    }
+</script>
